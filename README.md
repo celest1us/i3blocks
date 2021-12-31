@@ -18,6 +18,7 @@ The following dependencies are defined:
 ## Features
 
 |Script|Feature|
+|-|-|
 |arch-update|Shows if there are available updates for Arch Linux|
 |brightness|Shows current brightness|
 |battery|Shows current battery status|
