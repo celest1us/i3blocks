@@ -8,6 +8,8 @@ These configurations apply to Arch Linux distributions running `i3` as window ma
 
 ## Dependencies
 
+Most of the scripts depend on `ttf-font-awesome`.
+
 The following dependencies are defined:
 
 |Script|Dependencies|
