@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+curr_dt=$(date +"$STRFTIME_FORMAT")
+echo "$LABEL$curr_dt"

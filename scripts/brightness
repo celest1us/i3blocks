@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+perc=$(brightnessctl -l | grep -A1 backlight | tail -n1 | sed -e 's/.*(\(.*\)).*/\1/')
+
+if [ -z $perc ]
+then
+	echo ""
+	echo ""
+	echo "#777777"
+else
+	echo " $perc"
+fi

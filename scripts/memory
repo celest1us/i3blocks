@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+usedMem=$(free | grep Mem | awk '{printf "%d\%\n", $3/$2*100}')
+echo " $usedMem"

@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+volume=$(awk -F"[][]" '/Left:/ { print substr($2,1,length($2)-1) }' <(amixer sget Master))
+
+if [ $volume -eq 0 ]
+then
+	label=
+elif [ $volume < 51 ]
+then
+	label=
+else
+	label=
+fi
+
+echo $label $volume%

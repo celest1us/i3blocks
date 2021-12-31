@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+updatesNum=$(checkupdates | wc -l)
+
+if [ $updatesNum -gt 0 ]
+then
+	echo " $updatesNum updates available"
+	echo ""
+	echo "#ffffff"
+	echo "#dd0000"
+fi

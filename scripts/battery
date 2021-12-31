@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+battery_dir=/sys/class/power_supply/BAT0
+energy_now=$(< $battery_dir/energy_now)
+energy_full=$(< $battery_dir/energy_full)
+status_=$(< $battery_dir/status)
+
+energy_perc=$((energy_now*100/energy_full))
+
+if [ $status_ == "Charging" ]
+then
+	color=#eeee00
+	label=
+elif [ $energy_perc -lt 6 ]
+then
+	color=#dd0000
+	label=
+elif [ $energy_perc -lt 38 ]
+then
+	color=#ffcc00
+	label=
+elif [ $energy_perc -lt 63 ]
+then
+	color=#fefb01
+	label=
+elif [ $energy_perc -lt 88 ]
+then
+	color=#cefb02
+	label=
+else
+	color=#00ff00
+	label=
+fi
+
+
+echo "$label $energy_perc%"
+echo ""
+echo $color

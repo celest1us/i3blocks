@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+interface=$(ip route | grep default | awk '{print $5}')
+ip=$(ip route | grep $interface | tail -n 1 | awk '{print $9}')
+
+if [ -z $ip ]
+then
+	echo ""
+	echo ""
+	echo "#777777"
+else
+	echo " $ip"	
+fi
